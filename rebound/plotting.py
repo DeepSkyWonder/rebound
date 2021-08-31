@@ -244,7 +244,7 @@ def OrbitPlotOneSlice(sim, ax, Narc=128, color=False, periastron=False, orbit_ty
     if fancy:
         sun = (190./256.,237./256.,256./256.)
         opa = 0.035
-        size = 6000.
+        size = 3000.
         for i in range(100):
             ax.scatter(getattr(prim,axes[0]),getattr(prim,axes[1]), alpha=opa, s=size*lw, facecolor=sun, edgecolor=None, zorder=3)
             size *= 0.95
