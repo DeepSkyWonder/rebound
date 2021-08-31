@@ -242,7 +242,7 @@ def OrbitPlotOneSlice(sim, ax, Narc=128, color=False, periastron=False, orbit_ty
    
     prim = sim.particles[0] if primary is None else primary 
     if fancy:
-        sun = (256./256.,256./256.,190./256.)
+        sun = (190./256.,237./256.,256./256.)
         opa = 0.035
         size = 6000.
         for i in range(100):
