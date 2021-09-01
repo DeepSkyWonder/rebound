@@ -348,6 +348,7 @@ def OrbitPlotAddFancyStars(ax,lw,slices=1.):
     starsurfacedensity = 0.8
 
     area = np.sqrt(np.sum(np.square(ax.transAxes.transform([1.,1.]) - ax.transAxes.transform([0.,0.]))))*slices
+    area = xlim**2
     nstars = int(starsurfacedensity*area)
 
     #small stars
@@ -356,12 +357,12 @@ def OrbitPlotAddFancyStars(ax,lw,slices=1.):
     ax.scatter(xy[:,0],xy[:,1], transform=ax.transAxes, alpha=0.1, s=4*lw, facecolor=starcolor, edgecolor=None, zorder=3)
     ax.scatter(xy[:,0],xy[:,1], transform=ax.transAxes, alpha=0.2, s=0.5*lw, facecolor=starcolor, edgecolor=None, zorder=3)
     
-    np.random.set_state(os)
-    os = np.random.get_state()
-    np.random.seed(1)
+    # np.random.set_state(os)
+    # os = np.random.get_state()
+    # np.random.seed(1)
     
     #large stars
-    xy = np.random.uniform(size=(int(nstars*2),2))
+    xy = np.random.uniform(size=(nstars//4,2))
     ax.scatter(xy[:,0],xy[:,1], transform=ax.transAxes, alpha=0.1, s=15*lw, facecolor=starcolor, edgecolor=None, zorder=3)
     ax.scatter(xy[:,0],xy[:,1], transform=ax.transAxes, alpha=0.1, s=5*lw, facecolor=starcolor, edgecolor=None, zorder=3)
     ax.scatter(xy[:,0],xy[:,1], transform=ax.transAxes, alpha=0.5, s=2*lw, facecolor=starcolor, edgecolor=None, zorder=3)
