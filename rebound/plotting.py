@@ -348,7 +348,7 @@ def OrbitPlotAddFancyStars(ax,lw,slices=1.):
     starsurfacedensity = 0.8
 
     area = np.sqrt(np.sum(np.square(ax.transAxes.transform([1.,1.]) - ax.transAxes.transform([0.,0.]))))*slices
-    area = 3.24
+    area = 0.18
     nstars = int(starsurfacedensity*area)
 
     #small stars
